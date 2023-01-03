@@ -15,7 +15,6 @@ function App() {
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
 
   let fromAmount, toAmount;
-  console.log(exchangeRate);
   if (amountInFromCurrency) {
     fromAmount = amount;
     toAmount = amount * exchangeRate;
@@ -24,7 +23,7 @@ function App() {
     fromAmount = amount / exchangeRate;
   }
 
-  /* useEffect(() => {
+  useEffect(() => {
     axios
       .get(
         "https://api.apilayer.com/exchangerates_data/latest?apikey=utO7Z9iXRLQ2URlX9qbBErvIzcA4LGRR"
@@ -33,7 +32,7 @@ function App() {
       .then((data) => {
         const firstCurrency = Object.keys(data.rates)[0];
         setCurrencyOptions(Object.keys(data.rates));
-        setExchangeRate(currenciesData.rates);
+        setExchangeRate(currenciesData.rates[firstCurrency as keyof typeof currenciesData.rates]);
 
         setFromCurrency(data.base);
         setToCurrency(firstCurrency);
@@ -48,14 +47,14 @@ function App() {
       )`
         )
         .then((response) => response.data)
-        .then((data) => setExchangeRate(data.rates[toCurrency]));
+        .then((data) => setExchangeRate(data.rates[toCurrency as keyof typeof currenciesData.rates]));
     }
-  }, [fromCurrency, toCurrency]); */
+  }, [fromCurrency, toCurrency]);
 
-  useEffect(() => {
+  /* seEffect(() => {
     const firstCurrency = Object.keys(currenciesData.rates)[0];
     setCurrencyOptions(Object.keys(currenciesData.rates));
-    setExchangeRate(currenciesData.rates[firstCurrency]);
+    setExchangeRate(currenciesData.rates[firstCurrency as keyof typeof currenciesData.rates]);
 
     setFromCurrency(currenciesData.base);
     setToCurrency(firstCurrency);
@@ -63,9 +62,9 @@ function App() {
 
   useEffect(() => {
     if (fromCurrency != null && toCurrency != null) {
-      setExchangeRate(currenciesData.rates[toCurrency]);
+      setExchangeRate(currenciesData.rates[toCurrency as keyof typeof currenciesData.rates]);
     }
-  }, [fromCurrency, toCurrency]);
+  }, [fromCurrency, toCurrency]); */
 
   function handleToAmountChange(e) {
     setAmount(Number(e));
