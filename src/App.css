@@ -7,4 +7,42 @@
 
 .currency-input {
   margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.text,
+.title {
+  color: #1a1a1a;
+}
+
+.text {
+  font-size: 3rem;
+  background-color: none;
+  margin: 0;
+}
+
+.amount {
+  width: 50%;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  border: none;
+}
+
+.amount:focus {
+  border-color: #719ece;
+}
+
+.selected-currency {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #3b3b3b;
+  border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
