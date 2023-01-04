@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import CurrencyInput from "./components/CurrencyInput";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -23,7 +23,7 @@ function App() {
     fromAmount = amount / exchangeRate;
   }
 
-  /* useEffect(() => {
+  useEffect(() => {
     axios
       .get(
         "https://api.apilayer.com/exchangerates_data/latest?apikey=utO7Z9iXRLQ2URlX9qbBErvIzcA4LGRR"
@@ -49,9 +49,9 @@ function App() {
         .then((response) => response.data)
         .then((data) => setExchangeRate(data.rates[toCurrency as keyof typeof currenciesData.rates]));
     }
-  }, [fromCurrency, toCurrency]); */
+  }, [fromCurrency, toCurrency]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const firstCurrency = Object.keys(currenciesData.rates)[0];
     setCurrencyOptions(Object.keys(currenciesData.rates));
     setExchangeRate(currenciesData.rates[firstCurrency as keyof typeof currenciesData.rates]);
@@ -65,7 +65,7 @@ function App() {
       setExchangeRate(currenciesData.rates[toCurrency as keyof typeof currenciesData.rates]);
     }
   }, [fromCurrency, toCurrency]);
-
+ */
   function handleToAmountChange(amount: string) {
     setAmount(Number(amount));
     setAmountInFromCurrency(true);
