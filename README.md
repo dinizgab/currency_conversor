@@ -9,10 +9,11 @@
     - How to consume an API;
 
 ## Deployment
-- The final result can be seen in this link
+
+The final result can be seen in this link:
 - https://currency-converter-w5kj-4m93g5vqi-dinizgab.vercel.app/
 
-or you can clone the repository and run in with: 
+Or you can clone the repository and run in with: 
 
 ```
 git clone https://github.com/dinizgab/currency_converter
