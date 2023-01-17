@@ -17,10 +17,10 @@ function App() {
   let fromAmount, toAmount;
   if (amountInFromCurrency) {
     fromAmount = amount;
-    toAmount = amount * exchangeRate;
+    toAmount = amount * exchangeRate!;
   } else {
     toAmount = amount;
-    fromAmount = amount / exchangeRate;
+    fromAmount = amount / exchangeRate!;
   }
 
   useEffect(() => {
