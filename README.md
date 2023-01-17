@@ -6,7 +6,7 @@
 - The main purpose of this project was to study the following techs:
     - ReactJS;
     - TypeScript;
-    - How to consume an API;
+    - How to consume an API using only React;
 
 ## Deployment
 
