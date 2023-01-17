@@ -3,7 +3,7 @@ interface CurrencyInputProps {
   selectedCurrency: string;
   amount: number;
   onAmountChange: (amount: string) => void;
-  onCurrencyChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onCurrencyChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export default function CurrencyInput(props: CurrencyInputProps) {
